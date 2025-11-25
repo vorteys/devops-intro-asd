@@ -33,7 +33,7 @@ jobs:
           git config --global user.email "github-actions@gmail.com"
   
           mkdir ../gh-pages
-          cd -r dist/* ../gh-pages
+          cp -r dist/* ../gh-pages
   
           cd ../gh-pages
           git init 
@@ -42,5 +42,6 @@ jobs:
           git commit -m "Deploy to Github Pages"
   
           git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" gh-pages
+
 
 
